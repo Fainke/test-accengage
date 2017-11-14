@@ -1,0 +1,53 @@
+<?php
+
+$array = [10, 8, 9, 11, 63, 3];
+
+function even($tab)
+{
+	$tabEven = array();
+	$i = 0;
+	
+	while ($i < count($tab))
+	{
+		if ($tab[$i] % 2 == 0)
+		{
+			$tabEven[] = $tab[$i];
+		}
+		$i++;
+	}
+	return $tabEven;
+}
+
+function odd($tab)
+{
+	$tabOdd = array();
+	$i = 0;
+	
+	while ($i < count($tab))
+	{
+		if ($tab[$i] % 2 != 0)
+		{
+			$tabOdd[] = $tab[$i];
+		}
+		$i++;
+	}
+	return $tabOdd;
+}
+
+function odd_or_even($tab, $odd_or_even)
+{
+	if ($odd_or_even == "even") 
+	{
+		$resultat = even($tab);
+		return $resultat;
+	}
+	if ($odd_or_even == "odd") 
+	{
+		$resultat = odd($tab);
+		return $resultat;
+	}
+	else 
+	{
+		echo "Veuillez choisir odd ou even";
+	}
+}
