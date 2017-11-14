@@ -1,0 +1,67 @@
+<?php
+
+$array = [10, 8, 9, 11, 63, 3];
+
+function trie_tab_asc($tab)
+{
+	$i = 0;
+	$s = 1;
+	while($s < count($tab))
+	{
+		if ($tab[$i] > $tab[$s])
+		{
+			$tmp = $tab[$i];
+			$tab[$i] = $tab[$s];
+			$tab[$s] = $tmp;
+			$i = 0;
+			$s = 1;
+		}
+		else
+		{
+			$i++;
+			$s++;
+		}
+	}
+	return ($tab);
+}
+
+function trie_tab_desc($tab)
+{
+	$i = 0;
+	$s = 1;
+	while($s < count($tab))
+	{
+		if ($tab[$i] < $tab[$s])
+		{
+			$tmp = $tab[$i];
+			$tab[$i] = $tab[$s];
+			$tab[$s] = $tmp;
+			$i = 0;
+			$s = 1;
+		}
+		else
+		{
+			$i++;
+			$s++;
+		}
+	}
+	return ($tab);
+}
+
+function order($tab, $ascOrDesc)
+{
+	if ($ascOrDesc == "asc")
+	{
+		$tab = trie_tab_asc($tab);
+		return ($tab);
+	}
+	if ($ascOrDesc == "desc")
+	{
+		$tab = trie_tab_desc($tab);
+		return ($tab);
+	}
+	else 
+	{
+		echo "Veuillez choisir asc ou desc \n";
+	}
+}
