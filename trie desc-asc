@@ -1,5 +1,4 @@
 <?php
-
 $array = [10, 8, 9, 11, 63, 3];
 
 function trie_tab_asc($tab)
