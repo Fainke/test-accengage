@@ -4,3 +4,4 @@ INNER JOIN author a USING authorId
 WHERE a.authorId = b.bookId
 group by a.name
 
+
