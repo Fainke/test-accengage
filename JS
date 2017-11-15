@@ -5,3 +5,4 @@ array.forEach((number) =>
   total += number;
 }
 console.log(total);
+
